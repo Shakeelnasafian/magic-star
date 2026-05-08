@@ -1,3 +1,19 @@
+/*
+Theme Name: Magic Star Garage
+Theme URI: https://magicstarautorepairing.com/
+Author: Magic Star Auto Repairing
+Author URI: https://magicstarautorepairing.com/
+Description: Premium luxury car garage theme for Magic Star Auto Repairing - Dubai. Single-page brochure theme with Contact Form 7 integration for the quote-request form.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: magic-star
+Tags: one-page, business, custom-colors, custom-menu, threaded-comments
+*/
+
 /* ===== Reset & Base ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -999,4 +1015,38 @@ h4 { font-size: 1.2rem; }
     .btn { padding: 13px 24px; font-size: .9rem; }
     .about-img-badge { padding: 16px 20px; bottom: 16px; right: 16px; }
     .about-img-badge strong { font-size: 1.8rem; }
+}
+
+/* ===== Contact Form 7 overrides ===== */
+.contact-form .wpcf7-form-control-wrap { display: block; width: 100%; }
+.contact-form .wpcf7 form > p { margin: 0; }
+.contact-form .wpcf7-not-valid-tip {
+    color: #ff8a8a;
+    font-size: .82rem;
+    margin-top: 6px;
+}
+.contact-form .wpcf7-response-output {
+    margin: 18px 0 0 !important;
+    padding: 12px 16px !important;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-strong) !important;
+    background: var(--bg-1);
+    color: var(--text);
+    font-size: .9rem;
+    text-align: center;
+}
+.contact-form .wpcf7 form.sent .wpcf7-response-output {
+    border-color: rgba(109,210,138,.5) !important;
+    color: #6dd28a;
+}
+.contact-form .wpcf7 form.invalid .wpcf7-response-output,
+.contact-form .wpcf7 form.failed .wpcf7-response-output {
+    border-color: rgba(255,138,138,.5) !important;
+    color: #ff8a8a;
+}
+.contact-form .wpcf7-spinner { background-color: var(--gold); }
+.contact-form input[aria-invalid="true"],
+.contact-form select[aria-invalid="true"],
+.contact-form textarea[aria-invalid="true"] {
+    border-color: rgba(255,138,138,.6);
 }

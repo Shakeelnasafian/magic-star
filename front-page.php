@@ -1,165 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0a0c" />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
+<?php
+/**
+ * Front page template — single-page brochure layout.
+ *
+ * @package MagicStar
+ */
 
-    <title>Luxury Car Garage in Dubai | Mercedes, Rolls Royce, BMW &amp; More | Magic Star Auto Repairing</title>
-    <meta name="description" content="Magic Star Auto Repairing in Umm Ramool, Dubai - the trusted luxury car garage for Mercedes-Benz, Rolls Royce, BMW, Bentley, Ferrari, Lamborghini, Porsche, Audi and Range Rover. Engine repair, AC, paint, denting, wrapping, tinting, PPF, ceramic coating and detailing. Free quotes - +971 50 430 2507." />
-    <meta name="keywords" content="luxury car garage Dubai, Mercedes service Dubai, Rolls Royce service Dubai, BMW workshop Dubai, Bentley service Dubai, Ferrari service Dubai, Lamborghini service Dubai, Porsche service Dubai, car painting Dubai, car denting Dubai, paint protection film Dubai, PPF Dubai, ceramic coating Dubai, car wrapping Dubai, window tinting Dubai, car detailing Dubai, auto AC repair Dubai, engine repair Umm Ramool, Magic Star Garage" />
-    <meta name="author" content="Magic Star Auto Repairing" />
-    <link rel="canonical" href="https://wordpress2-alpha.vercel.app/" />
-
-    <!-- Geo / local SEO -->
-    <meta name="geo.region" content="AE-DU" />
-    <meta name="geo.placename" content="Umm Ramool, Dubai" />
-    <meta name="geo.position" content="25.2403;55.3790" />
-    <meta name="ICBM" content="25.2403, 55.3790" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="business.business" />
-    <meta property="og:site_name" content="Magic Star Auto Repairing" />
-    <meta property="og:title" content="Magic Star Auto Repairing - Luxury Car Garage in Dubai" />
-    <meta property="og:description" content="Premium auto care for Mercedes, Rolls Royce, BMW, Bentley, Ferrari, Lamborghini, Porsche, Audi and Range Rover. Engine, paint, PPF, ceramic, wrap, tint and detailing. Umm Ramool, Dubai." />
-    <meta property="og:url" content="https://wordpress2-alpha.vercel.app/" />
-    <meta property="og:locale" content="en_AE" />
-    <meta property="og:image" content="https://wordpress2-alpha.vercel.app/images/hero-workshop.jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="business:contact_data:street_address" content="2nd Street, Umm Ramool" />
-    <meta property="business:contact_data:locality" content="Dubai" />
-    <meta property="business:contact_data:country_name" content="United Arab Emirates" />
-    <meta property="business:contact_data:phone_number" content="+971504302507" />
-    <meta property="business:contact_data:email" content="Magicstarautorepairing@gmail.com" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Magic Star Auto Repairing - Luxury Car Garage in Dubai" />
-    <meta name="twitter:description" content="Premium auto care for Mercedes, Rolls Royce, BMW, Bentley, Ferrari, Lamborghini, Porsche, Audi and Range Rover in Umm Ramool, Dubai." />
-    <meta name="twitter:image" content="https://wordpress2-alpha.vercel.app/images/hero-workshop.jpeg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- Structured data: AutoRepair business -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AutoRepair",
-        "name": "Magic Star Auto Repairing",
-        "image": "https://wordpress2-alpha.vercel.app/images/brands/mercedes.svg",
-        "url": "https://wordpress2-alpha.vercel.app/",
-        "telephone": "+971504302507",
-        "email": "Magicstarautorepairing@gmail.com",
-        "priceRange": "$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "2nd Street, Umm Ramool",
-            "addressLocality": "Dubai",
-            "addressRegion": "Dubai",
-            "addressCountry": "AE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 25.2403,
-            "longitude": 55.3790
-        },
-        "areaServed": [
-            { "@type": "City", "name": "Dubai" },
-            { "@type": "City", "name": "Sharjah" },
-            { "@type": "City", "name": "Abu Dhabi" }
-        ],
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"],
-                "opens": "08:00",
-                "closes": "13:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"],
-                "opens": "14:00",
-                "closes": "19:00"
-            }
-        ],
-        "sameAs": [
-            "https://wa.me/971504302507"
-        ],
-        "makesOffer": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engine Repair & Diagnostics" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transmission & Gearbox Rebuilds" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auto AC Service" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car Painting & Denting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Protection Film (PPF)" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Coating" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vinyl Wrapping" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Tinting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Detailing & Polishing" } }
-        ],
-        "brand": [
-            "Mercedes-Benz","Rolls Royce","BMW","Bentley","Ferrari","Lamborghini","Porsche","Audi","Range Rover","Maserati","Aston Martin"
-        ]
-    }
-    </script>
-</head>
-<body>
-    <!-- Top Bar -->
-    <div class="topbar">
-        <div class="container topbar-inner">
-            <div class="topbar-left">
-                <span class="topbar-item">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05z"/></svg>
-                    <a href="tel:+971504302507">+971 50 430 2507</a>
-                </span>
-                <span class="topbar-item">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
-                    <a href="mailto:Magicstarautorepairing@gmail.com">Magicstarautorepairing@gmail.com</a>
-                </span>
-            </div>
-            <div class="topbar-right">
-                <span class="topbar-item">Sat - Thu: 8:00 AM - 7:00 PM (Break 1 - 2 PM)</span>
-                <a class="topbar-item topbar-wa" href="https://wa.me/971504302507" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0012 .04C5.42.04.04 5.42.04 12c0 2.11.55 4.18 1.6 6L0 24l6.18-1.62A11.95 11.95 0 0012 23.96c6.58 0 11.96-5.38 11.96-11.96 0-3.19-1.24-6.19-3.44-8.52zM12 21.94c-1.86 0-3.69-.5-5.29-1.45l-.38-.22-3.66.96.98-3.57-.25-.39A9.93 9.93 0 012.06 12C2.06 6.53 6.53 2.06 12 2.06c2.66 0 5.16 1.04 7.04 2.92A9.91 9.91 0 0121.94 12c0 5.47-4.47 9.94-9.94 9.94zm5.45-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
-                    WhatsApp
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Header / Nav -->
-    <header class="header" id="header">
-        <div class="container header-inner">
-            <a href="#home" class="logo">
-                <span class="logo-mark">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.18 21 12 16.51 5.82 21l2.36-7.15L2 9.36h7.61z"/></svg>
-                </span>
-                <span class="logo-text">
-                    <strong>Magic Star</strong>
-                    <small>Garage</small>
-                </span>
-            </a>
-
-            <nav class="nav" id="nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#luxury">Brands</a>
-                <a href="#why">Why Us</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-                <a href="#contact" class="btn btn-gold nav-cta">Book Now</a>
-            </nav>
-
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
+get_header();
+?>
 
     <!-- Hero -->
     <section class="hero" id="home">
@@ -497,18 +344,19 @@
                 </figure>
             </div>
 
+            <?php $brands_uri = get_template_directory_uri() . '/images/brands'; ?>
             <div class="brand-strip" aria-label="Brands we service">
-                <img src="images/brands/mercedes.svg" alt="Mercedes-Benz" loading="lazy" width="56" height="56" />
-                <img src="images/brands/rollsroyce.svg" alt="Rolls Royce" loading="lazy" width="56" height="56" />
-                <img src="images/brands/bmw.svg" alt="BMW" loading="lazy" width="56" height="56" />
-                <img src="images/brands/bentley.svg" alt="Bentley" loading="lazy" width="56" height="56" />
-                <img src="images/brands/ferrari.svg" alt="Ferrari" loading="lazy" width="56" height="56" />
-                <img src="images/brands/lamborghini.svg" alt="Lamborghini" loading="lazy" width="56" height="56" />
-                <img src="images/brands/porsche.svg" alt="Porsche" loading="lazy" width="120" height="56" />
-                <img src="images/brands/audi.svg" alt="Audi" loading="lazy" width="80" height="56" />
-                <img src="images/brands/landrover.svg" alt="Land Rover / Range Rover" loading="lazy" width="120" height="56" />
-                <img src="images/brands/maserati.svg" alt="Maserati" loading="lazy" width="56" height="56" />
-                <img src="images/brands/astonmartin.svg" alt="Aston Martin" loading="lazy" width="80" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/mercedes.svg' ); ?>" alt="Mercedes-Benz" loading="lazy" width="56" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/rollsroyce.svg' ); ?>" alt="Rolls Royce" loading="lazy" width="56" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/bmw.svg' ); ?>" alt="BMW" loading="lazy" width="56" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/bentley.svg' ); ?>" alt="Bentley" loading="lazy" width="56" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/ferrari.svg' ); ?>" alt="Ferrari" loading="lazy" width="56" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/lamborghini.svg' ); ?>" alt="Lamborghini" loading="lazy" width="56" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/porsche.svg' ); ?>" alt="Porsche" loading="lazy" width="120" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/audi.svg' ); ?>" alt="Audi" loading="lazy" width="80" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/landrover.svg' ); ?>" alt="Land Rover / Range Rover" loading="lazy" width="120" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/maserati.svg' ); ?>" alt="Maserati" loading="lazy" width="56" height="56" />
+                <img src="<?php echo esc_url( $brands_uri . '/astonmartin.svg' ); ?>" alt="Aston Martin" loading="lazy" width="80" height="56" />
             </div>
         </div>
     </section>
@@ -659,136 +507,12 @@
                 </ul>
             </div>
 
-            <form class="contact-form" id="contactForm" novalidate>
+            <div class="contact-form">
                 <h3>Request a Quote</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input id="name" name="name" type="text" placeholder="John Doe" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input id="phone" name="phone" type="tel" placeholder="+971 50 430 2507" required />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="you@example.com" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="car">Car Make &amp; Model</label>
-                        <input id="car" name="car" type="text" placeholder="e.g. Mercedes S-Class" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="service">Service Required</label>
-                    <select id="service" name="service">
-                        <option value="">Select a service</option>
-                        <option>Engine Repair &amp; Gear Repairing</option>
-                        <option>General Maintenance</option>
-                        <option>Engine Diagnostics</option>
-                        <option>Auto AC Repairing</option>
-                        <option>Wrapping Service</option>
-                        <option>Tinting Service</option>
-                        <option>Painting Service</option>
-                        <option>Denting Service</option>
-                        <option>PPF Service</option>
-                        <option>Oil Change</option>
-                        <option>Detailing &amp; Polishing</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Tell us a little about what your car needs..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-gold btn-block">Send Request</button>
-                <p class="form-note" id="formNote" hidden>Thanks! We'll be in touch shortly.</p>
-            </form>
+                <?php magic_star_render_contact_form(); ?>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <a href="#home" class="logo logo-light">
-                    <span class="logo-mark">
-                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.18 21 12 16.51 5.82 21l2.36-7.15L2 9.36h7.61z"/></svg>
-                    </span>
-                    <span class="logo-text">
-                        <strong>Magic Star</strong>
-                        <small>Garage</small>
-                    </span>
-                </a>
-                <p>Premium auto care and luxury car specialists. Engineered for performance, crafted for perfection.</p>
-            </div>
-            <div class="footer-col">
-                <h5>Quick Links</h5>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#luxury">Luxury Cars</a></li>
-                    <li><a href="#why">Why Choose Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Our Services</h5>
-                <ul>
-                    <li>Engine Repair &amp; Diagnostics</li>
-                    <li>General Maintenance</li>
-                    <li>Auto AC Repairing</li>
-                    <li>Painting &amp; Denting</li>
-                    <li>Wrapping &amp; Tinting</li>
-                    <li>PPF, Detailing &amp; Polishing</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Contact</h5>
-                <ul>
-                    <li>2nd Street, Umm Ramool, Dubai, UAE</li>
-                    <li><a href="tel:+971504302507">+971 50 430 2507</a></li>
-                    <li><a href="mailto:Magicstarautorepairing@gmail.com">Magicstarautorepairing@gmail.com</a></li>
-                    <li>Sat - Thu: 8 AM - 7 PM (Break 1 - 2 PM)</li>
-                    <li>Friday: Closed</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; <span id="year"></span> Magic Star Garage. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/971504302507?text=Hi%20Magic%20Star%2C%20I%27d%20like%20a%20quote%20for%20my%20car." class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0012 .04C5.42.04.04 5.42.04 12c0 2.11.55 4.18 1.6 6L0 24l6.18-1.62A11.95 11.95 0 0012 23.96c6.58 0 11.96-5.38 11.96-11.96 0-3.19-1.24-6.19-3.44-8.52zM12 21.94c-1.86 0-3.69-.5-5.29-1.45l-.38-.22-3.66.96.98-3.57-.25-.39A9.93 9.93 0 012.06 12C2.06 6.53 6.53 2.06 12 2.06c2.66 0 5.16 1.04 7.04 2.92A9.91 9.91 0 0121.94 12c0 5.47-4.47 9.94-9.94 9.94zm5.45-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.67-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
-        <span class="whatsapp-fab-label">Chat on WhatsApp</span>
-    </a>
-
-    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
-    </a>
-
-    <!-- FAQ structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            { "@type": "Question", "name": "Do you specialise in luxury and exotic cars?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our workshop is built around European luxury and performance vehicles — Mercedes-Benz, Rolls Royce, BMW, Bentley, Ferrari, Lamborghini, Porsche, Audi, Range Rover, Maserati and Aston Martin. We use dealer-level diagnostic tools (XENTRY, ISTA, ODIS, IDS) and stock OEM-grade parts." } },
-            { "@type": "Question", "name": "Where are you located in Dubai and do you collect the car?", "acceptedAnswer": { "@type": "Answer", "text": "We're on 2nd Street, Umm Ramool, Dubai. Free pickup and delivery anywhere in Dubai is available on request, and a courtesy car can be arranged for longer jobs." } },
-            { "@type": "Question", "name": "How long does a typical service take?", "acceptedAnswer": { "@type": "Answer", "text": "Most routine services are done the same day. Larger jobs like full body painting, PPF wraps or engine overhauls take 3 - 10 working days, with progress updates by WhatsApp." } },
-            { "@type": "Question", "name": "Do you offer a warranty on your work?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every repair is backed by our written workmanship warranty. PPF carries up to a 10-year manufacturer warranty, ceramic coatings 1, 5 or 9 years, and window tinting a lifetime film warranty." } },
-            { "@type": "Question", "name": "Can I get a free quote before you start work?", "acceptedAnswer": { "@type": "Answer", "text": "Always. Message us on WhatsApp at +971 50 430 2507 or fill in the form on this site, and we'll reply the same day with a no-obligation written estimate." } },
-            { "@type": "Question", "name": "Do you only use genuine OEM parts?", "acceptedAnswer": { "@type": "Answer", "text": "By default, yes. We source genuine OEM and OE-equivalent parts through trusted Dubai channels. Aftermarket performance parts can be sourced on request." } },
-            { "@type": "Question", "name": "What payment methods do you accept?", "acceptedAnswer": { "@type": "Answer", "text": "Cash, all major debit and credit cards, and bank transfer. We also support split payments and accept insurance assignments for accident repair." } }
-        ]
-    }
-    </script>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<?php
+get_footer();
