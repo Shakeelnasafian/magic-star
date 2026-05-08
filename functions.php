@@ -79,8 +79,11 @@ add_filter( 'wp_resource_hints', 'magic_star_resource_hints', 10, 2 );
 /**
  * Settings: which Contact Form 7 form ID to render in the contact section.
  *
+ * CF7 5.7+ exposes a hash ID (e.g. "ae9c6f8") in its shortcode instead of
+ * the legacy numeric post ID. Both formats are accepted here.
+ *
  * Two ways to override:
- *   1. Set the option `magic_star_cf7_id` to your CF7 form's post ID.
+ *   1. Set the option `magic_star_cf7_id` to your CF7 form's hash or post ID.
  *   2. Define the constant MAGIC_STAR_CF7_ID in wp-config.php.
  *
  * If neither is set, the contact section shows a friendly admin notice instead
@@ -88,9 +91,25 @@ add_filter( 'wp_resource_hints', 'magic_star_resource_hints', 10, 2 );
  */
 function magic_star_get_cf7_id() {
     if ( defined( 'MAGIC_STAR_CF7_ID' ) ) {
-        return (int) MAGIC_STAR_CF7_ID;
+        return (string) MAGIC_STAR_CF7_ID;
     }
-    return (int) get_option( 'magic_star_cf7_id', 0 );
+    return (string) get_option( 'magic_star_cf7_id', '' );
+}
+
+/**
+ * Sanitize the CF7 form ID input. Accepts either an integer post ID or a
+ * CF7 hash ID (alphanumeric, ~7+ chars). Anything else collapses to an empty
+ * string, which makes the homepage fall back to the admin setup notice.
+ */
+function magic_star_sanitize_cf7_id( $value ) {
+    $value = trim( (string) $value );
+    if ( '' === $value ) {
+        return '';
+    }
+    if ( preg_match( '/^[A-Za-z0-9]+$/', $value ) ) {
+        return $value;
+    }
+    return '';
 }
 
 /**
@@ -100,8 +119,8 @@ function magic_star_get_cf7_id() {
 function magic_star_render_contact_form() {
     $cf7_id = magic_star_get_cf7_id();
 
-    if ( $cf7_id && shortcode_exists( 'contact-form-7' ) ) {
-        echo do_shortcode( '[contact-form-7 id="' . absint( $cf7_id ) . '" title="Magic Star Quote Request"]' );
+    if ( '' !== $cf7_id && shortcode_exists( 'contact-form-7' ) ) {
+        echo do_shortcode( '[contact-form-7 id="' . esc_attr( $cf7_id ) . '" title="Magic Star Quote Request"]' );
         return;
     }
 
@@ -136,9 +155,9 @@ function magic_star_register_settings() {
         'magic_star_settings',
         'magic_star_cf7_id',
         array(
-            'type'              => 'integer',
-            'sanitize_callback' => 'absint',
-            'default'           => 0,
+            'type'              => 'string',
+            'sanitize_callback' => 'magic_star_sanitize_cf7_id',
+            'default'           => '',
         )
     );
 }
@@ -160,14 +179,14 @@ function magic_star_render_settings_page() {
                     </th>
                     <td>
                         <input
-                            type="number"
+                            type="text"
                             id="magic_star_cf7_id"
                             name="magic_star_cf7_id"
-                            value="<?php echo esc_attr( get_option( 'magic_star_cf7_id', 0 ) ); ?>"
+                            value="<?php echo esc_attr( get_option( 'magic_star_cf7_id', '' ) ); ?>"
                             class="regular-text"
-                            min="0" />
+                            pattern="[A-Za-z0-9]+" />
                         <p class="description">
-                            <?php esc_html_e( 'Find the form ID in Contact > Contact Forms (the number in the shortcode column). This form is rendered in the home-page Contact section.', 'magic-star' ); ?>
+                            <?php esc_html_e( 'Paste the id value from your CF7 shortcode — e.g. for [contact-form-7 id="ae9c6f8" title="Contact form 1"] enter ae9c6f8. Legacy numeric post IDs are also accepted. This form is rendered in the home-page Contact section.', 'magic-star' ); ?>
                         </p>
                     </td>
                 </tr>
